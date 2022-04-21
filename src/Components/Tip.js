@@ -1,9 +1,9 @@
 import React ,{useState} from 'react'
 import { Form, Button, Table, Alert } from 'react-bootstrap';
-import './Code.css';
+import './Tip.css';
 
 
-export default function Code(props) {
+export default function Tip(props) {
     const [amount, setAmount] = useState(0)
     const [service, setService] = useState(0)
     const [customer, setCustomer] = useState("")
@@ -36,7 +36,7 @@ export default function Code(props) {
             <div className="container">
      <Form>
         <div className="wrapper">
-        <h1>TIP CALCULATOR</h1>
+        <h1>&#8377; Tip Calculator &#8377;</h1>
           <p>Bill Amount</p>
           <input type="text" id="BillAmount"
             placeholder="Amount to be paid" onChange={handler} /> ₹
@@ -52,10 +52,10 @@ export default function Code(props) {
           </select>
           <p>Customer Name</p>
           <input type="text" id="TotalPersons"
-            placeholder="Enter Your Name" onChange={handler2} /> 
+            placeholder="Enter Your Name" onChange={handler2} required/> 
         </div>
             <br/>
-          <Button id="btnCustomer" variant="warning" onClick={getData}>Add Customer</Button>
+          <Button disabled={customer.length === 0} id="btnCustomer" variant="warning" onClick={getData}>Add Customer</Button>
         {/* <div className="tip">
           <p>Tip Amount</p>
           <span id="total">0</span> ₹
@@ -76,7 +76,7 @@ export default function Code(props) {
        <hr></hr>
        <br></br>
        <div className="container">
-        <Button variant="warning" onClick={getData1} >Calculate Tip amd Customer</Button>
+        <Button disabled={customer.length === 0} variant="warning" onClick={getData1} id="btnTip" >Calculate Tip amd Customer</Button>
        </div>
        <br></br>
        <div className="container" id="table">

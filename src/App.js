@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './App.css';
-import Code from './Components/Code';
+import Tip from './Components/Tip';
+
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
 
   return (
     <>
-    <Code customername={customername} AddCustomerName={AddCustomerName} totaltip={totaltip} AddTip={AddTip}/>
+    <Tip customername={customername} AddCustomerName={AddCustomerName} totaltip={totaltip} AddTip={AddTip}/>
     </>
   );
 }
